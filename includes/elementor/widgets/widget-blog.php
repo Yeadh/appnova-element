@@ -69,13 +69,6 @@ class appnova_Widget_Blog extends Widget_Base {
                 <div class="single-blog-post mb-30">
                     <div class="b-post-thumb">
                       <a href="<?php the_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url( get_the_ID(),'deimos-404x302'); ?>" alt="<?php the_title() ?>"></a>
-                      <div class="category">
-                        <?php 
-                        $categories = get_the_category();
-                        if ( ! empty( $categories ) ) {
-                            echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
-                        } ?>
-                      </div>
                     </div>
                     <div class="blog-content">
                       <ul class="list-inline">
@@ -83,8 +76,7 @@ class appnova_Widget_Blog extends Widget_Base {
                         <li class="list-inline-item"><i class="fa fa-calendar"></i><?php the_date(); ?></li>
                       </ul>
                       <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-                      <p><?php echo wp_trim_words( get_the_content(), 15, '.' ); ?></p>
-                      <a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'appnova' ); ?> <i class="fa fa-long-arrow-right"></i></a>
+                      <p><?php echo wp_trim_words( get_the_content(), 13, '.' ); ?></p>
                     </div>
                 </div>
               </div>

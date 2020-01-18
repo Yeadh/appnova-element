@@ -61,7 +61,7 @@ class appnova_Widget_newsletter extends Widget_Base {
 
       <!-- newsletter-area -->
       <div class="newsletter-area">
-        <div class="container-fluid">
+        <div class="container">
           <div class="row justify-content-center">
               <div class="col-xl-8 col-lg-10">
                   <div class="section-title text-center border-none mb-50">
@@ -70,7 +70,7 @@ class appnova_Widget_newsletter extends Widget_Base {
               </div>
           </div>
           <div class="row justify-content-center">
-              <div class="col-xl-8 col-lg-10">
+              <div class="col-xl-7">
                 <div class="newsletter-form">  
                   <?php echo do_shortcode( $settings['shortcode'] ); ?>
                 </div>
