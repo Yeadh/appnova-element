@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Button
-class evernet_Widget_Button extends Widget_Base {
+class appnova_Widget_Button extends Widget_Base {
  
    public function get_name() {
       return 'button';
    }
  
    public function get_title() {
-      return esc_html__( 'Button', 'evernet' );
+      return esc_html__( 'Button', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Button extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,22 +27,22 @@ class evernet_Widget_Button extends Widget_Base {
       $this->start_controls_section(
          'button_section',
          [
-            'label' => esc_html__( 'Button', 'evernet' ),
+            'label' => esc_html__( 'Button', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
 
       $this->add_control(
          'button_text', [
-            'label' => __( 'Button Text', 'evernet' ),
+            'label' => __( 'Button Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Learn More','evernet')
+            'default' => __('Learn More','appnova')
          ]
       );
 
       $this->add_control(
          'button_url', [
-            'label' => __( 'Button URL', 'evernet' ),
+            'label' => __( 'Button URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -51,13 +51,13 @@ class evernet_Widget_Button extends Widget_Base {
       $this->add_control(
          'align',
          [
-            'label' => __( 'Align', 'evernet' ),
+            'label' => __( 'Align', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'left',
             'options' => [
-               'center'  => __( 'Center', 'evernet' ),
-               'left' => __( 'Left', 'evernet' ),
-               'right' => __( 'Right', 'evernet' )
+               'center'  => __( 'Center', 'appnova' ),
+               'left' => __( 'Left', 'appnova' ),
+               'right' => __( 'Right', 'appnova' )
             ],
          ]
       );
@@ -80,7 +80,7 @@ class evernet_Widget_Button extends Widget_Base {
       $this->add_inline_editing_attributes( 'color', 'basic' );
       ?>
 
-      <div class="evernet-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
+      <div class="appnova-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
          <a class="btn" href="<?php echo esc_url( $settings['button_url'] ); ?>">
             <?php echo esc_html( $settings['button_text'] ); ?></a>
       </div>
@@ -89,4 +89,4 @@ class evernet_Widget_Button extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Button );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Button );

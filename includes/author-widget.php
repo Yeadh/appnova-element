@@ -1,21 +1,21 @@
 <?php
 /**
  * Add Recent Post Widget.
- * @package evernet
+ * @package appnova
  */
-if( !class_exists('evernet_Author') ){
-	class evernet_Author extends WP_Widget{
+if( !class_exists('appnova_Author') ){
+	class appnova_Author extends WP_Widget{
 		/**
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
 
 			$widget_options = array(
-				'description'					=> esc_html__('evernet author here', 'evernet'), 
+				'description'					=> esc_html__('appnova author here', 'appnova'), 
 				'customize_selective_refresh' 	=> true,
 			);
 
-			parent:: __construct('evernet_Author', esc_html__( 'Author : evernet', 'evernet'), $widget_options );
+			parent:: __construct('appnova_Author', esc_html__( 'Author : appnova', 'appnova'), $widget_options );
 
 		}
 		
@@ -35,9 +35,9 @@ if( !class_exists('evernet_Author') ){
 
 		}
 		
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'About Author','evernet' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'About Author','appnova' );
 		$profile_image = ( ! empty( $instance['profile_image'] ) ) ? $instance['profile_image'] : '';
-		$short_description = ( ! empty( $instance['short_description'] ) ) ? $instance['short_description'] : esc_html__( 'A design is plan or specification for the construction','evernet' );
+		$short_description = ( ! empty( $instance['short_description'] ) ) ? $instance['short_description'] : esc_html__( 'A design is plan or specification for the construction','appnova' );
 		$facebook = ( ! empty( $instance['facebook'] ) ) ? $instance['facebook'] : '#';
 		$twitter = ( ! empty( $instance['twitter'] ) ) ? $instance['twitter'] : '#';
 		$pinterest = ( ! empty( $instance['pinterest'] ) ) ? $instance['pinterest'] : '#';
@@ -118,33 +118,33 @@ if( !class_exists('evernet_Author') ){
 		?>
 
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','appnova' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
 		<p>
-	        <label for="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>"><?php echo esc_html__( 'Profile image:','evernet' ); ?></label>
+	        <label for="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>"><?php echo esc_html__( 'Profile image:','appnova' ); ?></label>
 	        <img class="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>_img" src="<?php echo esc_url($profile_image); ?>" style="margin:0;padding:0;max-width:100%;display:block"/>
 	        <input type="text" class="widefat <?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>_url" name="<?php echo esc_attr($this->get_field_name( 'profile_image' )); ?>" value="<?php echo esc_attr($profile_image); ?>" style="margin-top:5px;" />
 	        <input type="button" id="<?php echo esc_attr($this->get_field_id( 'profile_image' )); ?>" class="button button-primary js_custom_upload_media" value="Upload Image" style="margin-top:5px;" />
 	    </p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>"><?php echo esc_html__( 'Short description:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>"><?php echo esc_html__( 'Short description:','appnova' ); ?></label>
 			<textarea class="widefat" rows="5" cols="30" id="<?php echo esc_attr($this->get_field_id( 'short_description' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'short_description' )); ?>"><?php echo stripslashes( $short_description ); ?></textarea>
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>"><?php echo esc_html__( 'Facebook:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>"><?php echo esc_html__( 'Facebook:','appnova' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'facebook' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'facebook' )); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>"><?php echo esc_html__( 'Twitter:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>"><?php echo esc_html__( 'Twitter:','appnova' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'twitter' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'twitter' )); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>"><?php echo esc_html__( 'Pinterest:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>"><?php echo esc_html__( 'Pinterest:','appnova' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'pinterest' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'pinterest' )); ?>" type="text" value="<?php echo esc_attr($pinterest); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>"><?php echo esc_html__( 'Linkedin:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>"><?php echo esc_html__( 'Linkedin:','appnova' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'linkedin' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'linkedin' )); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
 		</p>
 
@@ -156,7 +156,7 @@ if( !class_exists('evernet_Author') ){
 
 
 // register Contact  Widget widget
-function evernet_Author(){
-	register_widget('evernet_Author');
+function appnova_Author(){
+	register_widget('appnova_Author');
 }
-add_action('widgets_init','evernet_Author');
+add_action('widgets_init','appnova_Author');

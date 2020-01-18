@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class evernet_Widget_Service extends Widget_Base {
+class appnova_Widget_Service extends Widget_Base {
  
    public function get_name() {
       return 'service item';
    }
  
    public function get_title() {
-      return esc_html__( 'Service Item', 'evernet' );
+      return esc_html__( 'Service Item', 'appnova' );
    }
  
    public function get_icon() { 
@@ -18,13 +18,13 @@ class evernet_Widget_Service extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'service_section',
          [
-            'label' => esc_html__( 'Service Item', 'evernet' ),
+            'label' => esc_html__( 'Service Item', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -32,7 +32,7 @@ class evernet_Widget_Service extends Widget_Base {
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'evernet' ),
+            'label' => __( 'Icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -43,29 +43,29 @@ class evernet_Widget_Service extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Awesome Design','evernet'),
+            'default' => __('Awesome Design','appnova'),
          ]
       );
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'evernet' ),
+            'label' => __( 'Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dummy text are used here so replace your app data, ipsum dummy text are used here so','evernet'),
+            'default' => __('Lorem ipsum dummy text are used here so replace your app data, ipsum dummy text are used here so','appnova'),
          ]
       );
 
       $this->add_control(
          'style',
          [
-            'label' => __( 'Service Style', 'evernet' ),
+            'label' => __( 'Service Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'center',
             'options' => [
-               'center'  => __( 'Center Icon', 'evernet' ),
-               'left' => __( 'Left Icon', 'evernet' ),
+               'center'  => __( 'Center Icon', 'appnova' ),
+               'left' => __( 'Left Icon', 'appnova' ),
             ],
          ]
       );
@@ -117,4 +117,4 @@ class evernet_Widget_Service extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Service );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Service );

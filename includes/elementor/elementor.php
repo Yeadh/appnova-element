@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // get posts dropdown
-function evernet_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
+function appnova_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 'post_title') {
   $options = [];
   $posts = get_posts($args);
   foreach ((array) $posts as $term) {
@@ -12,22 +12,22 @@ function evernet_get_portfolio_dropdown_array($args = [], $key = 'ID', $value = 
   return $options;
 }
 
-function evernet_add_elementor_widget_categories( $elements_manager ) {
+function appnova_add_elementor_widget_categories( $elements_manager ) {
 
 	$elements_manager->add_category(
-		'evernet-elements',
+		'appnova-elements',
 		[
-			'title' => esc_html__( 'evernet Elements', 'evernet' ),
+			'title' => esc_html__( 'appnova Elements', 'appnova' ),
 			'icon' => 'fa fa-plug',
 		]
 	);
 
 }
-add_action( 'elementor/elements/categories_registered', 'evernet_add_elementor_widget_categories' );
+add_action( 'elementor/elements/categories_registered', 'appnova_add_elementor_widget_categories' );
 
 //Elementor init
 
-class evernet_ElementorCustomElement {
+class appnova_ElementorCustomElement {
  
    private static $instance = null;
  
@@ -70,4 +70,4 @@ class evernet_ElementorCustomElement {
 
 }
 
-evernet_ElementorCustomElement::get_instance()->init();
+appnova_ElementorCustomElement::get_instance()->init();

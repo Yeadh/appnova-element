@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class evernet_Widget_Title extends Widget_Base {
+class appnova_Widget_Title extends Widget_Base {
  
    public function get_name() {
       return 'title';
    }
  
    public function get_title() {
-      return esc_html__( 'Title', 'evernet' );
+      return esc_html__( 'Title', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Title extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Title extends Widget_Base {
       $this->start_controls_section(
          'title_section',
          [
-            'label' => esc_html__( 'Title', 'evernet' ),
+            'label' => esc_html__( 'Title', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,37 +35,37 @@ class evernet_Widget_Title extends Widget_Base {
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Sub Title', 'evernet' ),
+            'label' => __( 'Sub Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('exclusive feature','evernet')
+            'default' => __('exclusive feature','appnova')
          ]
       );
       
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Awesome Customer Service With Our Tools.','evernet')
+            'default' => __('Awesome Customer Service With Our Tools.','appnova')
          ]
       );
 
       $this->add_control(
          'align',
          [
-            'label' => __( 'Alignment', 'evernet' ),
+            'label' => __( 'Alignment', 'appnova' ),
             'type' => \Elementor\Controls_Manager::CHOOSE,
             'options' => [
                'text-left' => [
-                  'title' => __( 'Left', 'evernet' ),
+                  'title' => __( 'Left', 'appnova' ),
                   'icon' => 'fa fa-align-left',
                ],
                'text-center' => [
-                  'title' => __( 'Center', 'evernet' ),
+                  'title' => __( 'Center', 'appnova' ),
                   'icon' => 'fa fa-align-center',
                ],
                'text-right' => [
-                  'title' => __( 'Right', 'evernet' ),
+                  'title' => __( 'Right', 'appnova' ),
                   'icon' => 'fa fa-align-right',
                ],
             ],
@@ -77,10 +77,10 @@ class evernet_Widget_Title extends Widget_Base {
       $this->add_control(
          'white',
          [
-            'label' => __( 'White title', 'evernet' ),
+            'label' => __( 'White title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'evernet' ),
-            'label_off' => __( 'Off', 'evernet' ),
+            'label_on' => __( 'On', 'appnova' ),
+            'label_off' => __( 'Off', 'appnova' ),
             'return_value' => 'white',
             'default' => 'no',   
          ]
@@ -111,4 +111,4 @@ class evernet_Widget_Title extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Title );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Title );

@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // blog
-class evernet_Widget_Blog extends Widget_Base {
+class appnova_Widget_Blog extends Widget_Base {
  
    public function get_name() {
       return 'blog';
    }
  
    public function get_title() {
-      return esc_html__( 'Latest Blog', 'evernet' );
+      return esc_html__( 'Latest Blog', 'appnova' );
    }
  
    public function get_icon() { 
@@ -18,25 +18,25 @@ class evernet_Widget_Blog extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'blog_section',
          [
-            'label' => esc_html__( 'Blog', 'evernet' ),
+            'label' => esc_html__( 'Blog', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
       $this->add_control(
          'order',
          [
-            'label' => __( 'Order', 'evernet' ),
+            'label' => __( 'Order', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'ASC',
             'options' => [
-               'ASC'  => __( 'Ascending', 'evernet' ),
-               'DESC' => __( 'Descending', 'evernet' )
+               'ASC'  => __( 'Ascending', 'appnova' ),
+               'DESC' => __( 'Descending', 'appnova' )
             ],
          ]
       );
@@ -84,7 +84,7 @@ class evernet_Widget_Blog extends Widget_Base {
                       </ul>
                       <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                       <p><?php echo wp_trim_words( get_the_content(), 15, '.' ); ?></p>
-                      <a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'evernet' ); ?> <i class="fa fa-long-arrow-right"></i></a>
+                      <a href="<?php the_permalink(); ?>"><?php echo esc_html__( 'Read More', 'appnova' ); ?> <i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
               </div>
@@ -100,4 +100,4 @@ class evernet_Widget_Blog extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Blog );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Blog );

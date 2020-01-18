@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class evernet_Widget_Gallery extends Widget_Base {
+class appnova_Widget_Gallery extends Widget_Base {
  
    public function get_name() {
       return 'gallery';
    }
  
    public function get_title() {
-      return esc_html__( 'Gallery Item', 'evernet' );
+      return esc_html__( 'Gallery Item', 'appnova' );
    }
  
    public function get_icon() { 
@@ -18,7 +18,7 @@ class evernet_Widget_Gallery extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -26,7 +26,7 @@ class evernet_Widget_Gallery extends Widget_Base {
       $this->start_controls_section(
          'gallery_section',
          [
-            'label' => esc_html__( 'Gallery Item', 'evernet' ),
+            'label' => esc_html__( 'Gallery Item', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -34,18 +34,18 @@ class evernet_Widget_Gallery extends Widget_Base {
       $this->add_control(
          'sub-title',
          [
-            'label' => __( 'Sub Title', 'evernet' ),
+            'label' => __( 'Sub Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Awesome Portfolio','evernet')
+            'default' => __('Awesome Portfolio','appnova')
          ]
       );
       
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Our Exclusive Gallery','evernet')
+            'default' => __('Our Exclusive Gallery','appnova')
          ]
       );
 
@@ -54,7 +54,7 @@ class evernet_Widget_Gallery extends Widget_Base {
       $gallery->add_control(
          'image',
          [
-            'label' => __( 'Image', 'evernet' ),
+            'label' => __( 'Image', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -65,25 +65,25 @@ class evernet_Widget_Gallery extends Widget_Base {
       $gallery->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Sequrity Management', 'evernet' )
+            'default' => __( 'Sequrity Management', 'appnova' )
          ]
       );
 
       $gallery->add_control(
          'text',
          [
-            'label' => __( 'Subtitle', 'evernet' ),
+            'label' => __( 'Subtitle', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Blending Image', 'evernet' )
+            'default' => __( 'Blending Image', 'appnova' )
          ]
       );
 
       $this->add_control(
          'gallery_list',
          [
-            'label' => __( 'Gallery', 'evernet' ),
+            'label' => __( 'Gallery', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $gallery->get_controls(),
             'title_field' => '{{{ title }}}',
@@ -93,16 +93,16 @@ class evernet_Widget_Gallery extends Widget_Base {
       $this->add_control(
          'btn-text',
          [
-            'label' => __( 'Button Text', 'evernet' ),
+            'label' => __( 'Button Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('More Project','evernet')
+            'default' => __('More Project','appnova')
          ]
       );
 
       $this->add_control(
          'btn-url',
          [
-            'label' => __( 'Button URL', 'evernet' ),
+            'label' => __( 'Button URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
@@ -157,4 +157,4 @@ class evernet_Widget_Gallery extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Gallery );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Gallery );

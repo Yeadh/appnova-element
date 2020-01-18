@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Banner Parallax
-class evernet_Widget_Banner extends Widget_Base {
+class appnova_Widget_Banner extends Widget_Base {
  
    public function get_name() {
       return 'banner_pop';
    }
  
    public function get_title() {
-      return esc_html__( 'Banner', 'evernet' );
+      return esc_html__( 'Banner', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Banner extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Banner extends Widget_Base {
       $this->start_controls_section(
          'banner_section',
          [
-            'label' => esc_html__( 'Banner', 'evernet' ),
+            'label' => esc_html__( 'Banner', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -36,15 +36,15 @@ class evernet_Widget_Banner extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Banner Style', 'evernet' ),
+            'label' => __( 'Banner Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'saas',
             'options' => [
-               'saas' => __( 'SaaS', 'evernet' ),
-               'hrmanagement' => __( 'HR Management', 'evernet' ),
-               'digitalmarketing' => __( 'Digital Marketing', 'evernet' ),
-               'accountsbilling' => __( 'Accounts Billing', 'evernet' ),
-               'how_we_work' => __( 'How we work', 'evernet' ),
+               'saas' => __( 'SaaS', 'appnova' ),
+               'hrmanagement' => __( 'HR Management', 'appnova' ),
+               'digitalmarketing' => __( 'Digital Marketing', 'appnova' ),
+               'accountsbilling' => __( 'Accounts Billing', 'appnova' ),
+               'how_we_work' => __( 'How we work', 'appnova' ),
             ],
          ]
       );
@@ -53,7 +53,7 @@ class evernet_Widget_Banner extends Widget_Base {
       $this->add_control(
       'banner_image',
         [
-          'label' => __( 'Banner image', 'evernet' ),
+          'label' => __( 'Banner image', 'appnova' ),
           'type' => \Elementor\Controls_Manager::MEDIA,
           'default' => [
             'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -64,32 +64,32 @@ class evernet_Widget_Banner extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Thinking Software High Quality','evernet')
+            'default' => __('Thinking Software High Quality','appnova')
          ]
       );
 
       $this->add_control(
          'description',
          [
-            'label' => __( 'Description', 'evernet' ),
+            'label' => __( 'Description', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing seddo eiumod tempor incididunt labore dolore','evernet')
+            'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing seddo eiumod tempor incididunt labore dolore','appnova')
          ]
       );
 
       $this->add_control(
          'btn_text', [
-            'label' => __( 'Text', 'evernet' ),
+            'label' => __( 'Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('get started','evernet')
+            'default' => __('get started','appnova')
          ]
       );
 
       $this->add_control(
          'btn_url', [
-            'label' => __( 'URL', 'evernet' ),
+            'label' => __( 'URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -97,15 +97,15 @@ class evernet_Widget_Banner extends Widget_Base {
 
       $this->add_control(
          'btn_text2', [
-            'label' => __( 'Text', 'evernet' ),
+            'label' => __( 'Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('contact us','evernet')
+            'default' => __('contact us','appnova')
          ]
       );
 
       $this->add_control(
          'btn_url2', [
-            'label' => __( 'URL', 'evernet' ),
+            'label' => __( 'URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -254,4 +254,4 @@ class evernet_Widget_Banner extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Banner );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Banner );

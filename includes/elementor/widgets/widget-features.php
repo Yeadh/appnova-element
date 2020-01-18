@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Features
-class evernet_Widget_Features extends Widget_Base {
+class appnova_Widget_Features extends Widget_Base {
  
    public function get_name() {
       return 'features';
    }
  
    public function get_title() {
-      return esc_html__( 'Features', 'evernet' );
+      return esc_html__( 'Features', 'appnova' );
    }
  
    public function get_icon() {
@@ -19,7 +19,7 @@ class evernet_Widget_Features extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Features extends Widget_Base {
       $this->start_controls_section(
          'features',
          [
-            'label' => esc_html__( 'Features', 'evernet' ),
+            'label' => esc_html__( 'Features', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,29 +35,29 @@ class evernet_Widget_Features extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Layout Style', 'evernet' ),
+            'label' => __( 'Layout Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'style1',
             'options' => [
-               'style1' => __( 'Style 1', 'evernet' ),
-               'style2' => __( 'Style 2', 'evernet' ),
-               'style3' => __( 'Style 3', 'evernet' ),
-               'style4' => __( 'Style 4', 'evernet' ),
-               'style5' => __( 'Style 5', 'evernet' ),
+               'style1' => __( 'Style 1', 'appnova' ),
+               'style2' => __( 'Style 2', 'appnova' ),
+               'style3' => __( 'Style 3', 'appnova' ),
+               'style4' => __( 'Style 4', 'appnova' ),
+               'style5' => __( 'Style 5', 'appnova' ),
             ],
          ]
       );
 
       $this->add_control(
          'feature_icon', [
-            'label' => __( 'Feature Icon', 'evernet' ),
+            'label' => __( 'Feature Icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
       
       $this->add_control(
          'feature_title', [
-            'label' => __( 'Feature Title', 'evernet' ),
+            'label' => __( 'Feature Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Market Analysis',
          ]
@@ -65,7 +65,7 @@ class evernet_Widget_Features extends Widget_Base {
 
       $this->add_control(
          'feature_text', [
-            'label' => __( 'Feature Text', 'evernet' ),
+            'label' => __( 'Feature Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
             'default' => 'Orem Ipsum is simply dummy text the printing and typesetting industry sum has been the industrys',
          ]
@@ -73,7 +73,7 @@ class evernet_Widget_Features extends Widget_Base {
 
       $this->add_control(
          'feature_btn_text', [
-            'label' => __( 'Button Text', 'evernet' ),
+            'label' => __( 'Button Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'More About',
          ]
@@ -81,7 +81,7 @@ class evernet_Widget_Features extends Widget_Base {
 
       $this->add_control(
          'feature_btn_url', [
-            'label' => __( 'Button URL', 'evernet' ),
+            'label' => __( 'Button URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -90,10 +90,10 @@ class evernet_Widget_Features extends Widget_Base {
       $this->add_control(
          'active',
          [
-            'label' => __( 'Active', 'evernet' ),
+            'label' => __( 'Active', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'evernet' ),
-            'label_off' => __( 'Off', 'evernet' ),
+            'label_on' => __( 'On', 'appnova' ),
+            'label_off' => __( 'Off', 'appnova' ),
             'return_value' => 'active',
             'default' => 'off',
          ]
@@ -183,4 +183,4 @@ class evernet_Widget_Features extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Features );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Features );

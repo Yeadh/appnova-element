@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class evernet_Widget_Soft_Integration extends Widget_Base {
+class appnova_Widget_Soft_Integration extends Widget_Base {
  
    public function get_name() {
       return 'software_integration';
    }
  
    public function get_title() {
-      return esc_html__( 'Software Integration', 'evernet' );
+      return esc_html__( 'Software Integration', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
       $this->start_controls_section(
          'software_integration_section',
          [
-            'label' => esc_html__( 'Software Integration', 'evernet' ),
+            'label' => esc_html__( 'Software Integration', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -38,7 +38,7 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Software Logo', 'evernet' ),
+            'label' => __( 'Software Logo', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src()
@@ -49,7 +49,7 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
       $repeater->add_control(
          'logo_url',
          [
-            'label' => __( 'Software URL', 'evernet' ),
+            'label' => __( 'Software URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#'
          ]
@@ -59,7 +59,7 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
       $this->add_control(
          'software_list',
          [
-            'label' => __( 'Software List', 'evernet' ),
+            'label' => __( 'Software List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls()
 
@@ -92,4 +92,4 @@ class evernet_Widget_Soft_Integration extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Soft_Integration );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Soft_Integration );

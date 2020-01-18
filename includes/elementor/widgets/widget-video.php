@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // video
-class evernet_Widget_video extends Widget_Base {
+class appnova_Widget_video extends Widget_Base {
  
    public function get_name() {
       return 'video';
    }
  
    public function get_title() {
-      return esc_html__( 'Video', 'evernet' );
+      return esc_html__( 'Video', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_video extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,14 +27,14 @@ class evernet_Widget_video extends Widget_Base {
       $this->start_controls_section(
          'video_section',
          [
-            'label' => esc_html__( 'Video', 'evernet' ),
+            'label' => esc_html__( 'Video', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
 
       $this->add_control(
          'background', [
-            'label' => __( 'Background', 'evernet' ),
+            'label' => __( 'Background', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
               'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -45,7 +45,7 @@ class evernet_Widget_video extends Widget_Base {
       $this->add_control(
          'url',
          [
-            'label' => __( 'URL', 'evernet' ),
+            'label' => __( 'URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -78,4 +78,4 @@ class evernet_Widget_video extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_video );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_video );

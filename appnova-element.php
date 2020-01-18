@@ -10,10 +10,10 @@
  *
  * @link              https://ThemeBeyond.com
  * @since             1.0.0
- * @package           Evernet_Element
+ * @package           appnova_Element
  *
  * @wordpress-plugin
- * Plugin Name:       Evernet Element
+ * Plugin Name:       appnova Element
  * Plugin URI:        https://ThemeBeyond.com/mega-addons-for-elementor
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
@@ -21,7 +21,7 @@
  * Author URI:        https://ThemeBeyond.com
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       evernet
+ * Text Domain:       appnova
  * Domain Path:       /languages
  */
 
@@ -30,20 +30,20 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class evernet {
+class appnova {
 
 	function __construct() {
 		$this->load_plugin_textdomain();
 		$this->load_dependencies();
-		$this->evernet_setup();
+		$this->appnova_setup();
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 
 	}
 
-	public function evernet_setup() {
-		add_image_size( 'evernet-77x64', 77,64, true );
-		add_image_size( 'evernet-100x75', 100,75, true );
+	public function appnova_setup() {
+		add_image_size( 'appnova-77x64', 77,64, true );
+		add_image_size( 'appnova-100x75', 100,75, true );
 	}
 
 	public function load_plugin_textdomain() {
@@ -51,16 +51,16 @@ class evernet {
 	}
 
 	public function enqueue_scripts() {
-		wp_register_style( 'evernet-style', plugin_dir_url( __FILE__ ) . 'public/assets/css/style.css' );
-		wp_register_script( 'evernet-main-js', plugin_dir_url( __FILE__ ) . 'public/assets/js/main.js' );
+		wp_register_style( 'appnova-style', plugin_dir_url( __FILE__ ) . 'public/assets/css/style.css' );
+		wp_register_script( 'appnova-main-js', plugin_dir_url( __FILE__ ) . 'public/assets/js/main.js' );
 
-		wp_enqueue_style( 'evernet-style' );
-		wp_enqueue_script( 'evernet-main-js' );
+		wp_enqueue_style( 'appnova-style' );
+		wp_enqueue_script( 'appnova-main-js' );
 	}
 
 	public function admin_scripts() {
 	    wp_enqueue_media();
-	    wp_enqueue_script('evernet-admin-main-js', plugin_dir_url( __FILE__ ) . 'admin/assets/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
+	    wp_enqueue_script('appnova-admin-main-js', plugin_dir_url( __FILE__ ) . 'admin/assets/js/main.js', array('jquery'), wp_get_theme()->get( 'Version' ), true );
 	}
 
 	private function load_dependencies() {
@@ -72,4 +72,4 @@ class evernet {
 	}
 
 }
-new evernet();
+new appnova();

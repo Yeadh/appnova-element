@@ -1,6 +1,6 @@
 <?php 
 
-function evernet_social_sharing() {?>
+function appnova_social_sharing() {?>
     <ul>
         <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink() ?>"><i class="fa fa-facebook-f"></i></a></li>
         <li><a href="https://twitter.com/home?status=<?php the_permalink() ?>"><i class="fa fa-twitter"></i></a></li>

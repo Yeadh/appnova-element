@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // service item
-class evernet_Widget_Portfolio extends Widget_Base {
+class appnova_Widget_Portfolio extends Widget_Base {
  
    public function get_name() {
       return 'portfolio';
    }
  
    public function get_title() {
-      return esc_html__( 'Portfolio Item', 'evernet' );
+      return esc_html__( 'Portfolio Item', 'appnova' );
    }
  
    public function get_icon() { 
@@ -18,13 +18,13 @@ class evernet_Widget_Portfolio extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'portfolio_section',
          [
-            'label' => esc_html__( 'Portfolio Item', 'evernet' ),
+            'label' => esc_html__( 'Portfolio Item', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -32,7 +32,7 @@ class evernet_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'image',
          [
-            'label' => __( 'Image', 'evernet' ),
+            'label' => __( 'Image', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -43,17 +43,17 @@ class evernet_Widget_Portfolio extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Blanding Pro','evernet'),
+            'default' => __('Blanding Pro','appnova'),
          ]
       );
       $this->add_control(
          'text',
          [
-            'label' => __( 'Sub title', 'evernet' ),
+            'label' => __( 'Sub title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Creative Market','evernet'),
+            'default' => __('Creative Market','appnova'),
          ]
       );
 
@@ -84,4 +84,4 @@ class evernet_Widget_Portfolio extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Portfolio );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Portfolio );

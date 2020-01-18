@@ -3,14 +3,14 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 // contact item
-class evernet_Widget_Contact extends Widget_Base {
+class appnova_Widget_Contact extends Widget_Base {
  
    public function get_name() {
       return 'Contact item';
    }
  
    public function get_title() {
-      return esc_html__( 'Contact Item', 'evernet' );
+      return esc_html__( 'Contact Item', 'appnova' );
    }
  
    public function get_icon() { 
@@ -18,20 +18,20 @@ class evernet_Widget_Contact extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
    protected function _register_controls() {
       $this->start_controls_section(
          'contact_section',
          [
-            'label' => esc_html__( 'Contact Item', 'evernet' ),
+            'label' => esc_html__( 'Contact Item', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
       $this->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'evernet' ),
+            'label' => __( 'Icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA
          ]     
       );
@@ -39,15 +39,15 @@ class evernet_Widget_Contact extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Call us','evernet'),
+            'default' => __('Call us','appnova'),
          ]
       );
       $this->add_control(
          'text',
          [
-            'label' => __( 'Text', 'evernet' ),
+            'label' => __( 'Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA
          ]
       );
@@ -82,4 +82,4 @@ class evernet_Widget_Contact extends Widget_Base {
    }
  
 }
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Contact );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Contact );

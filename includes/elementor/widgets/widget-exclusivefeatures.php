@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Features
-class evernet_Widget_ExFeatures extends Widget_Base {
+class appnova_Widget_ExFeatures extends Widget_Base {
  
    public function get_name() {
       return 'exfeatures';
    }
  
    public function get_title() {
-      return esc_html__( 'Exclusive Features', 'evernet' );
+      return esc_html__( 'Exclusive Features', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->start_controls_section(
          'features',
          [
-            'label' => esc_html__( 'Exclusive Features', 'evernet' ),
+            'label' => esc_html__( 'Exclusive Features', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,7 +35,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
       'bg_color_1',
         [
-          'label' => __( 'Gradient Color 1', 'evernet' ),
+          'label' => __( 'Gradient Color 1', 'appnova' ),
           'type' => \Elementor\Controls_Manager::COLOR,
           'scheme' => [
             'type' => \Elementor\Scheme_Color::get_type(),
@@ -47,7 +47,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
       'bg_color_2',
         [
-          'label' => __( 'Gradient Color 2', 'evernet' ),
+          'label' => __( 'Gradient Color 2', 'appnova' ),
           'type' => \Elementor\Controls_Manager::COLOR,
           'scheme' => [
             'type' => \Elementor\Scheme_Color::get_type(),
@@ -59,7 +59,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
       'mockup_image',
         [
-          'label' => __( 'Mockup image', 'evernet' ),
+          'label' => __( 'Mockup image', 'appnova' ),
           'type' => \Elementor\Controls_Manager::MEDIA,
           'default' => [
             'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -70,18 +70,18 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Exclusive Features','evernet')
+            'default' => __('Exclusive Features','appnova')
          ]
       );
       
       $this->add_control(
          'sub_title',
          [
-            'label' => __( 'Sub Title', 'evernet' ),
+            'label' => __( 'Sub Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __('Lorem ipsum dummy text are used here so replace your app data','evernet')
+            'default' => __('Lorem ipsum dummy text are used here so replace your app data','appnova')
          ]
       );
 
@@ -89,7 +89,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
 
       $feature->add_control(
          'feature_icon', [
-            'label' => __( 'Feature Icon', 'evernet' ),
+            'label' => __( 'Feature Icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
               'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -99,7 +99,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       
       $feature->add_control(
          'feature_title', [
-            'label' => __( 'Feature Title', 'evernet' ),
+            'label' => __( 'Feature Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Clean Designs',
          ]
@@ -107,7 +107,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
 
       $feature->add_control(
          'feature_text', [
-            'label' => __( 'Feature Text', 'evernet' ),
+            'label' => __( 'Feature Text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
             'default' => 'Lorem ipsum dummy text are used here so replace your app data, Lorem ipsum dummy text are used here',
          ]
@@ -116,7 +116,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
          'feature',
          [
-            'label' => __( 'Features', 'evernet' ),
+            'label' => __( 'Features', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $feature->get_controls(),
             'title_field' => '{{{ feature_title }}}',
@@ -127,7 +127,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
 
       $screenshot->add_control(
          'shot', [
-            'label' => __( 'Screenshot', 'evernet' ),
+            'label' => __( 'Screenshot', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
               'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -138,7 +138,7 @@ class evernet_Widget_ExFeatures extends Widget_Base {
       $this->add_control(
          'screenshot',
          [
-            'label' => __( 'Screenshot', 'evernet' ),
+            'label' => __( 'Screenshot', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $screenshot->get_controls()
          ]
@@ -201,4 +201,4 @@ class evernet_Widget_ExFeatures extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_ExFeatures );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_ExFeatures );

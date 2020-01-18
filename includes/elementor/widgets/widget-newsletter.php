@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Newsletter
-class evernet_Widget_newsletter extends Widget_Base {
+class appnova_Widget_newsletter extends Widget_Base {
  
    public function get_name() {
       return 'newsletter';
    }
  
    public function get_title() {
-      return esc_html__( 'Newsletter', 'evernet' );
+      return esc_html__( 'Newsletter', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_newsletter extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_newsletter extends Widget_Base {
       $this->start_controls_section(
          'newsletter_section',
          [
-            'label' => esc_html__( 'Newsletter', 'evernet' ),
+            'label' => esc_html__( 'Newsletter', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,43 +35,43 @@ class evernet_Widget_newsletter extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Layout Style', 'evernet' ),
+            'label' => __( 'Layout Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'style1',
             'options' => [
-               'style1' => __( 'Style 1', 'evernet' ),
-               'style2' => __( 'Style 2', 'evernet' ),
+               'style1' => __( 'Style 1', 'appnova' ),
+               'style2' => __( 'Style 2', 'appnova' ),
             ],
          ]
       );
 
       $this->add_control(
          'title', [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Get reguler updates', 'evernet' ),
+            'default' => __( 'Get reguler updates', 'appnova' ),
          ]
       );
 
       $this->add_control(
          'desc', [
-            'label' => __( 'Description', 'evernet' ),
+            'label' => __( 'Description', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __( 'Lorem ipsum dummy text are used here so replace your app data, Lorem ipsm', 'evernet' ),
+            'default' => __( 'Lorem ipsum dummy text are used here so replace your app data, Lorem ipsm', 'appnova' ),
          ]
       );
 
       $this->add_control(
          'shortcode', [
-            'label' => __( 'Mailchimp Shortcode', 'evernet' ),
+            'label' => __( 'Mailchimp Shortcode', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'placeholder' => __( '[mc4wp_form id="123"]', 'evernet' ),
+            'placeholder' => __( '[mc4wp_form id="123"]', 'appnova' ),
          ]
       );
 
       $this->add_control(
          'background', [
-            'label' => __( 'Floating Image', 'evernet' ),
+            'label' => __( 'Floating Image', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
               'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -151,4 +151,4 @@ class evernet_Widget_newsletter extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_newsletter );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_newsletter );

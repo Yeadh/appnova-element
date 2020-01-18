@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Offerfeature
-class evernet_Widget_Offerfeature extends Widget_Base {
+class appnova_Widget_Offerfeature extends Widget_Base {
  
    public function get_name() {
       return 'offerfeature';
    }
  
    public function get_title() {
-      return esc_html__( 'Offer Feature', 'evernet' );
+      return esc_html__( 'Offer Feature', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Offerfeature extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Offerfeature extends Widget_Base {
       $this->start_controls_section(
          'section',
          [
-            'label' => esc_html__( 'Offer Feature', 'evernet' ),
+            'label' => esc_html__( 'Offer Feature', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,7 +35,7 @@ class evernet_Widget_Offerfeature extends Widget_Base {
       $this->add_control(
          'subtitle',
          [
-            'label' => __( 'Sub title', 'evernet' ),
+            'label' => __( 'Sub title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'OFFERS FEATURE'
          ]
@@ -44,7 +44,7 @@ class evernet_Widget_Offerfeature extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'What We Offer Service'
          ]
@@ -55,7 +55,7 @@ class evernet_Widget_Offerfeature extends Widget_Base {
       $feature->add_control(
          'icon',
          [
-            'label' => __( 'Icon', 'evernet' ),
+            'label' => __( 'Icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA
          ]
       );
@@ -63,16 +63,16 @@ class evernet_Widget_Offerfeature extends Widget_Base {
       $feature->add_control(
          'title',
          [
-            'label' => __( 'Title', 'evernet' ),
+            'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => __( 'Control Incoming <br> Moneys', 'evernet' )
+            'default' => __( 'Control Incoming <br> Moneys', 'appnova' )
          ]
       );
 
       $this->add_control(
          'feature_list',
          [
-            'label' => __( 'Feature List', 'evernet' ),
+            'label' => __( 'Feature List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $feature->get_controls(),
             'title_field' => '{{{ title }}}',
@@ -122,4 +122,4 @@ class evernet_Widget_Offerfeature extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Offerfeature );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Offerfeature );

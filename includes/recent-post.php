@@ -1,21 +1,21 @@
 <?php
 /**
  * Add Recent Post Widget.
- * @package evernet
+ * @package appnova
  */
-if( !class_exists('evernet_Recent_Post') ){
-	class evernet_Recent_Post extends WP_Widget{
+if( !class_exists('appnova_Recent_Post') ){
+	class appnova_Recent_Post extends WP_Widget{
 		/**
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
 
 			$widget_options = array(
-				'description'					=> esc_html__('evernet recent post here', 'evernet'), 
+				'description'					=> esc_html__('appnova recent post here', 'appnova'), 
 				'customize_selective_refresh' 	=> true,
 			);
 
-			parent:: __construct('evernet_Recent_Post', esc_html__( 'Recent Post : evernet', 'evernet'), $widget_options );
+			parent:: __construct('appnova_Recent_Post', esc_html__( 'Recent Post : appnova', 'appnova'), $widget_options );
 
 		}
 		
@@ -35,7 +35,7 @@ if( !class_exists('evernet_Recent_Post') ){
 
 		}
 		
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','evernet' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','appnova' );
 		
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -62,7 +62,7 @@ if( !class_exists('evernet_Recent_Post') ){
                 <?php while($posts->have_posts()) : $posts->the_post();  ?>
 	               	<li>
 	               		<div class="widget-recent-post-thumb">
-							<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'evernet-77x64' ); ?></a>
+							<a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'appnova-77x64' ); ?></a>
 	               		</div>
 	               		<div class="widget-recent-content">	               			
                             <span><i class="far fa-clock"></i><?php echo get_the_date() ?></span>
@@ -77,7 +77,7 @@ if( !class_exists('evernet_Recent_Post') ){
 				    <?php while($posts->have_posts()) : $posts->the_post();  ?>
 				        <li>
 				            <div class="rc-post-thumb">
-				                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'evernet-100x75' ); ?></a>
+				                <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'appnova-100x75' ); ?></a>
 				            </div>
 				            <div class="rc-post-content">
 				            	<span><?php echo get_the_date() ?></span>
@@ -122,12 +122,12 @@ if( !class_exists('evernet_Recent_Post') ){
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_item    = isset( $instance['show_item'] ) ? absint( $instance['show_item'] ) : 4;
 	?>
-		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','evernet' ); ?></label>
+		<p><label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo esc_html__( 'Title:','appnova' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
 		
 		
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','evernet' ); ?></label>
+			<label for="<?php echo esc_attr($this->get_field_id( 'show_item' )); ?>"><?php echo esc_html__( 'No. of Item of posts to show:','appnova' ); ?></label>
 			<input class="tiny-text" id="<?php echo esc_attr(esc_attr($this->get_field_id( 'show_item' ))); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_item' )); ?>" type="number" step="1" min="1" value="<?php echo esc_attr($show_item); ?>" size="3" />
 		</p>
 
@@ -139,7 +139,7 @@ if( !class_exists('evernet_Recent_Post') ){
 
 
 // register Contact  Widget widget
-function evernet_Recent_Post(){
-	register_widget('evernet_Recent_Post');
+function appnova_Recent_Post(){
+	register_widget('appnova_Recent_Post');
 }
-add_action('widgets_init','evernet_Recent_Post');
+add_action('widgets_init','appnova_Recent_Post');

@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class evernet_Widget_Testimonials extends Widget_Base {
+class appnova_Widget_Testimonials extends Widget_Base {
  
    public function get_name() {
       return 'testimonials';
    }
  
    public function get_title() {
-      return esc_html__( 'Testimonials', 'evernet' );
+      return esc_html__( 'Testimonials', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $this->start_controls_section(
          'testimonial_section',
          [
-            'label' => esc_html__( 'Testimonials', 'evernet' ),
+            'label' => esc_html__( 'Testimonials', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -36,13 +36,13 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Style', 'evernet' ),
+            'label' => __( 'Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'style1',
             'options' => [
-               'style1' => __( 'Style 1', 'evernet' ),
-               'style2' => __( 'Style 2', 'evernet' ),
-               'style3' => __( 'Style 3', 'evernet' ),
+               'style1' => __( 'Style 1', 'appnova' ),
+               'style2' => __( 'Style 2', 'appnova' ),
+               'style3' => __( 'Style 3', 'appnova' ),
             ],
          ]
       );
@@ -53,7 +53,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Choose Photo', 'evernet' ),
+            'label' => __( 'Choose Photo', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src()
@@ -64,7 +64,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'name',
          [
-            'label' => __( 'Name', 'evernet' ),
+            'label' => __( 'Name', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             
          ]
@@ -73,7 +73,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'designation',
          [
-            'label' => __( 'Designation', 'evernet' ),
+            'label' => __( 'Designation', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT
          ]
       );
@@ -81,7 +81,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $repeater->add_control(
          'testimonial',
          [
-            'label' => __( 'Testimonial', 'evernet' ),
+            'label' => __( 'Testimonial', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA
          ]
       );
@@ -89,7 +89,7 @@ class evernet_Widget_Testimonials extends Widget_Base {
       $this->add_control(
          'testimonial_list',
          [
-            'label' => __( 'Testimonial List', 'evernet' ),
+            'label' => __( 'Testimonial List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls(),
             'title_field' => '{{name}}',
@@ -181,4 +181,4 @@ class evernet_Widget_Testimonials extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Testimonials );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Testimonials );

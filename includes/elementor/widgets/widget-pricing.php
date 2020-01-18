@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Pricing
-class evernet_Widget_Pricing extends Widget_Base {
+class appnova_Widget_Pricing extends Widget_Base {
  
    public function get_name() {
       return 'pricing';
    }
  
    public function get_title() {
-      return esc_html__( 'Pricing', 'evernet' );
+      return esc_html__( 'Pricing', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Pricing extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->start_controls_section(
          'pricing_section',
          [
-            'label' => esc_html__( 'Pricing', 'evernet' ),
+            'label' => esc_html__( 'Pricing', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -35,12 +35,12 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'style',
          [
-            'label' => __( 'Style', 'evernet' ),
+            'label' => __( 'Style', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'style1',
             'options' => [
-               'style1' => __( 'Style 1', 'evernet' ),
-               'style2' => __( 'Style 2', 'evernet' )
+               'style1' => __( 'Style 1', 'appnova' ),
+               'style2' => __( 'Style 2', 'appnova' )
             ],
          ]
       );
@@ -48,7 +48,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'title',
          [
-            'label' => __( 'title', 'evernet' ),
+            'label' => __( 'title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'Standard Plan'
          ]
@@ -57,7 +57,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'desc',
          [
-            'label' => __( 'Description', 'evernet' ),
+            'label' => __( 'Description', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
             'condition' => ['style' => 'style2']
          ]
@@ -66,7 +66,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'icon',
          [
-            'label' => __( 'icon', 'evernet' ),
+            'label' => __( 'icon', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA
          ]
       );
@@ -74,7 +74,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'price',
          [
-            'label' => __( 'Price', 'evernet' ),
+            'label' => __( 'Price', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '70'
          ]
@@ -83,15 +83,15 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'package',
          [
-            'label' => __( 'Package', 'evernet' ),
+            'label' => __( 'Package', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SELECT,
             'default' => 'Yealry',
             'options' => [
-               'Daily'  => __( 'Daily', 'evernet' ),
-               'Weekly'  => __( 'Weekly', 'evernet' ),
-               'Monthly' => __( 'Monthly', 'evernet' ),
-               'Yealry' => __( 'Yealry', 'evernet' ),
-               'none' => __( 'None', 'evernet' )
+               'Daily'  => __( 'Daily', 'appnova' ),
+               'Weekly'  => __( 'Weekly', 'appnova' ),
+               'Monthly' => __( 'Monthly', 'appnova' ),
+               'Yealry' => __( 'Yealry', 'appnova' ),
+               'none' => __( 'None', 'appnova' )
             ],
          ]
       );
@@ -101,33 +101,33 @@ class evernet_Widget_Pricing extends Widget_Base {
       $feature->add_control(
          'feature',
          [
-            'label' => __( 'Feature', 'evernet' ),
+            'label' => __( 'Feature', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __( '10 Free Domain Names', 'evernet' )
+            'default' => __( '10 Free Domain Names', 'appnova' )
          ]
       );
 
       $this->add_control(
          'feature_list',
          [
-            'label' => __( 'Feature List', 'evernet' ),
+            'label' => __( 'Feature List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $feature->get_controls(),
             'default' => [
                [
-                  'feature' => __( '5GB Storage Space', 'evernet' )
+                  'feature' => __( '5GB Storage Space', 'appnova' )
                ],
                [
-                  'feature' => __( '20GB Monthly Bandwidth', 'evernet' )
+                  'feature' => __( '20GB Monthly Bandwidth', 'appnova' )
                ],
                [
-                  'feature' => __( 'My SQL Databases', 'evernet' )
+                  'feature' => __( 'My SQL Databases', 'appnova' )
                ],
                [
-                  'feature' => __( '100 Email Account', 'evernet' )
+                  'feature' => __( '100 Email Account', 'appnova' )
                ],
                [
-                  'feature' => __( '10 Free Domain Names', 'evernet' )
+                  'feature' => __( '10 Free Domain Names', 'appnova' )
                ]
             ],
             'title_field' => '{{{ feature }}}',
@@ -137,7 +137,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'btn_text',
          [
-            'label' => __( 'button text', 'evernet' ),
+            'label' => __( 'button text', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => 'subscribe',
          ]
@@ -146,7 +146,7 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'btn_url',
          [
-            'label' => __( 'button URL', 'evernet' ),
+            'label' => __( 'button URL', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
             'default' => '#',
          ]
@@ -155,10 +155,10 @@ class evernet_Widget_Pricing extends Widget_Base {
       $this->add_control(
          'recommended',
          [
-            'label' => __( 'Recommended', 'evernet' ),
+            'label' => __( 'Recommended', 'appnova' ),
             'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'evernet' ),
-            'label_off' => __( 'Off', 'evernet' ),
+            'label_on' => __( 'On', 'appnova' ),
+            'label_off' => __( 'Off', 'appnova' ),
             'return_value' => 'on',
             'default' => 'off',
          ]
@@ -221,4 +221,4 @@ class evernet_Widget_Pricing extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Pricing );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Pricing );

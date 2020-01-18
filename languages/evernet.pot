@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Evernet Element\n"
+"Project-Id-Version: appnova Element\n"
 "POT-Creation-Date: 2019-10-28 11:39+0600\n"
 "PO-Revision-Date: 2019-10-28 11:39+0600\n"
 "Last-Translator: \n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: includes/author-widget.php:14
-msgid "evernet author here"
+msgid "appnova author here"
 msgstr ""
 
 #: includes/author-widget.php:18
-msgid "Author : evernet"
+msgid "Author : appnova"
 msgstr ""
 
 #: includes/author-widget.php:38
@@ -139,7 +139,7 @@ msgid "Add New Category"
 msgstr ""
 
 #: includes/elementor/elementor.php:20
-msgid "evernet Elements"
+msgid "appnova Elements"
 msgstr ""
 
 #: includes/elementor/widgets/widget-accordion.php:14
@@ -744,11 +744,11 @@ msgid "Background"
 msgstr ""
 
 #: includes/recent-post.php:14
-msgid "evernet recent post here"
+msgid "appnova recent post here"
 msgstr ""
 
 #: includes/recent-post.php:18
-msgid "Recent Post : evernet"
+msgid "Recent Post : appnova"
 msgstr ""
 
 #: includes/recent-post.php:38
@@ -760,7 +760,7 @@ msgid "No. of Item of posts to show:"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "Evernet Element"
+msgid "appnova Element"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

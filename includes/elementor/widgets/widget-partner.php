@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Title
-class evernet_Widget_Partner extends Widget_Base {
+class appnova_Widget_Partner extends Widget_Base {
  
    public function get_name() {
       return 'partner';
    }
  
    public function get_title() {
-      return esc_html__( 'Partner', 'evernet' );
+      return esc_html__( 'Partner', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class evernet_Widget_Partner extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'evernet-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class evernet_Widget_Partner extends Widget_Base {
       $this->start_controls_section(
          'partner_section',
          [
-            'label' => esc_html__( 'partner', 'evernet' ),
+            'label' => esc_html__( 'partner', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -38,7 +38,7 @@ class evernet_Widget_Partner extends Widget_Base {
       $repeater->add_control(
          'image',
          [
-            'label' => __( 'Choose Photo', 'evernet' ),
+            'label' => __( 'Choose Photo', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src()
@@ -50,7 +50,7 @@ class evernet_Widget_Partner extends Widget_Base {
       $this->add_control(
          'partner_list',
          [
-            'label' => __( 'Partner List', 'evernet' ),
+            'label' => __( 'Partner List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $repeater->get_controls()
 
@@ -86,4 +86,4 @@ class evernet_Widget_Partner extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new evernet_Widget_Partner );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Partner );
