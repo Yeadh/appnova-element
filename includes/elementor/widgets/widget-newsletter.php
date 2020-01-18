@@ -33,19 +33,6 @@ class appnova_Widget_newsletter extends Widget_Base {
       );
 
       $this->add_control(
-         'style',
-         [
-            'label' => __( 'Layout Style', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style1',
-            'options' => [
-               'style1' => __( 'Style 1', 'appnova' ),
-               'style2' => __( 'Style 2', 'appnova' ),
-            ],
-         ]
-      );
-
-      $this->add_control(
          'title', [
             'label' => __( 'Title', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
@@ -54,28 +41,10 @@ class appnova_Widget_newsletter extends Widget_Base {
       );
 
       $this->add_control(
-         'desc', [
-            'label' => __( 'Description', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __( 'Lorem ipsum dummy text are used here so replace your app data, Lorem ipsm', 'appnova' ),
-         ]
-      );
-
-      $this->add_control(
          'shortcode', [
             'label' => __( 'Mailchimp Shortcode', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
             'placeholder' => __( '[mc4wp_form id="123"]', 'appnova' ),
-         ]
-      );
-
-      $this->add_control(
-         'background', [
-            'label' => __( 'Floating Image', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::MEDIA,
-            'default' => [
-              'url' => \Elementor\Utils::get_placeholder_image_src(),
-            ],
          ]
       );
 
@@ -89,63 +58,24 @@ class appnova_Widget_newsletter extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-      <?php if ( $settings['style'] == 'style1' ){ ?>
 
       <!-- newsletter-area -->
-      <section class="newsletter-area <?php if (is_front_page()){echo 'newsletter-bg';}else{echo 's-newsletter-bg';} ?>" data-background="<?php echo get_template_directory_uri() ?>/img/newsletter_bg.png">
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-xl-8 col-lg-10">
-                      <div class="section-title text-center border-none mb-75">
-                          <h2><?php echo esc_html($settings['title']); ?></h2>
-                          <p><?php echo esc_html($settings['desc']); ?></p>
-                      </div>
-                  </div>
-              </div>
-              <div class="row justify-content-center">
-                  <div class="col-xl-8 col-lg-10">
-                    <div class="newsletter-form">  
-                      <?php echo do_shortcode( $settings['shortcode'] ); ?>
-                    </div>
+      <div class="container newsletter-area">
+          <div class="row justify-content-center">
+              <div class="col-xl-8 col-lg-10">
+                  <div class="section-title text-center border-none mb-75">
+                      <h2><?php echo $settings['title']; ?></h2>
                   </div>
               </div>
           </div>
-          <span class="moveshape-one"></span>
-          <span class="moveshape-two"></span>
-          <span class="moveshape-three"></span>
-          <span class="moveshape-four"></span>
-          <span class="moveshape-five"></span>
-          <div class="newsletter-app wow slideInLeft" data-wow-duration="1.5s" data-wow-delay="0.2s"><img src="<?php echo esc_url($settings['background']['url']); ?>" alt="img" class="alltuchtopdown"></div>
-      </section>
-      <!-- newsletter-area-end -->
-
-      <?php } elseif( $settings['style'] == 'style2' ){ ?>
-
-      <!-- newsletter-area -->
-      <section class="newsletter-area h-newsletter-bg">
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-xl-6 col-lg-8">
-                      <div class="section-title s-section-title white-title text-center border-none mb-75">
-                          <h2><?php echo esc_html($settings['title']); ?></h2>
-                          <p><?php echo esc_html($settings['desc']); ?></p>
-                      </div>
-                  </div>
-              </div>
-              <div class="row justify-content-center">
-                  <div class="col-xl-7 col-lg-10">
-                      <div class="s-newsletter-form">
-                          <?php echo do_shortcode( $settings['shortcode'] ); ?>
-                      </div>
-                  </div>
+          <div class="row justify-content-center">
+              <div class="col-xl-8 col-lg-10">
+                <div class="newsletter-form">  
+                  <?php echo do_shortcode( $settings['shortcode'] ); ?>
+                </div>
               </div>
           </div>
-          <div class="sub-shape"><img src="<?php echo get_template_directory_uri() ?>/img/sub_img.png" alt="img"></div>
-          <div class="sub-shape s-sub-shape"><img src="<?php echo get_template_directory_uri() ?>/img/sub_img02.png" alt="img"></div>
-      </section>
-      <!-- newsletter-area-end -->
-
-    <?php } ?>
+      </div>
 
 <?php }
  

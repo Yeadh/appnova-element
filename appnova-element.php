@@ -36,7 +36,6 @@ class appnova {
 		$this->load_plugin_textdomain();
 		$this->load_dependencies();
 		$this->appnova_setup();
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 
 	}
@@ -48,14 +47,6 @@ class appnova {
 
 	public function load_plugin_textdomain() {
 		load_plugin_textdomain( 'mega-addons', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/' );
-	}
-
-	public function enqueue_scripts() {
-		wp_register_style( 'appnova-style', plugin_dir_url( __FILE__ ) . 'public/assets/css/style.css' );
-		wp_register_script( 'appnova-main-js', plugin_dir_url( __FILE__ ) . 'public/assets/js/main.js' );
-
-		wp_enqueue_style( 'appnova-style' );
-		wp_enqueue_script( 'appnova-main-js' );
 	}
 
 	public function admin_scripts() {
