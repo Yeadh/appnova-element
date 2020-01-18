@@ -32,18 +32,6 @@ class appnova_Widget_Pricing extends Widget_Base {
          ]
       );
 
-      $this->add_control(
-         'style',
-         [
-            'label' => __( 'Style', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style1',
-            'options' => [
-               'style1' => __( 'Style 1', 'appnova' ),
-               'style2' => __( 'Style 2', 'appnova' )
-            ],
-         ]
-      );
 
       $this->add_control(
          'title',
@@ -173,15 +161,11 @@ class appnova_Widget_Pricing extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
       
-      <?php if ( $settings['style'] == 'style1' ){ ?>
 
       <div class="single-pricing <?php if ( 'on' == $settings['recommended'] ){ echo"active"; }?> text-center">
          <div class="pricing-head mb-30">
              <span><?php echo esc_html( $settings['title'] ); ?></span>
              <h2>$<?php echo esc_html( $settings['price'] ); ?><span>/<?php echo esc_html( $settings['package'] ); ?></span></h2>
-         </div>
-         <div class="pricing-icon mb-35">
-             <img src="<?php echo esc_url( $settings['icon']['url'] ); ?>" alt="<?php echo esc_attr( $settings['title'] ); ?>">
          </div>
          <div class="pricing-list mb-35">
              <ul>
@@ -195,29 +179,7 @@ class appnova_Widget_Pricing extends Widget_Base {
          </div>
       </div>
 
-      <?php } elseif( $settings['style'] == 'style2' ){ ?>
-
-      <div class="single-pricing s-single-pricing active text-center mb-30">
-         <div class="pricing-head mb-35">
-             <span><?php echo esc_html( $settings['title'] ); ?></span>
-             <p><?php echo esc_html( $settings['desc'] ); ?></p>
-             <h2  class="price-count">$<?php echo esc_html( $settings['price'] ); ?><span>/<?php echo esc_html( $settings['package'] ); ?></span></h2>
-         </div>
-         <div class="pricing-list mb-35">
-            <ul>
-               <?php foreach( $settings['feature_list'] as $index => $feature ) { ?>
-                  <li><?php echo $feature['feature'] ?></li>
-               <?php } ?>
-             </ul>
-         </div>
-         <div class="s-pricing-btn">
-            <a href="<?php echo esc_attr( $settings['btn_url'] ) ?>" class="btn"><?php echo esc_html( $settings['btn_text'] ) ?></a>
-         </div>
-      </div>
-
    <?php }
-
-   }
  
 }
 

@@ -94,10 +94,12 @@ class appnova_Widget_Banner extends Widget_Base {
                     <div class="col-xl-7 col-lg-6">
                         <div class="slider-content s-slider-content mt-60">
                             <h1 class="wow fadeInUp" data-wow-delay="0.2s"><?php echo $settings['title'] ?></h1>
-                            <div class="col-lg-10">
-                              <p class="wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html( $settings['description'] ) ?></p>
+                            <div class="row">
+                              <div class="col-lg-10">
+                                <p class="wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html( $settings['description'] ) ?></p>
+                              </div>
                             </div>
-                            <a href="<?php echo esc_url( $settings['btn_url'] ) ?>" class="btn wow fadeInLeft" data-wow-delay="0.6s"><?php echo esc_html( $settings['btn_text'] ) ?></a>
+                            <a href="<?php echo esc_url( $settings['btn_url'] ) ?>" class="btn wow fadeInUp" data-wow-delay="0.6s"><?php echo esc_html( $settings['btn_text'] ) ?></a>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-6 d-none d-lg-block text-right">

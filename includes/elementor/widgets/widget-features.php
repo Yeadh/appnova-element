@@ -31,28 +31,18 @@ class appnova_Widget_Features extends Widget_Base {
             'type' => Controls_Manager::SECTION,
          ]
       );
+      
 
       $this->add_control(
-         'style',
-         [
-            'label' => __( 'Layout Style', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style1',
-            'options' => [
-               'style1' => __( 'Style 1', 'appnova' ),
-               'style2' => __( 'Style 2', 'appnova' ),
-               'style3' => __( 'Style 3', 'appnova' ),
-               'style4' => __( 'Style 4', 'appnova' ),
-               'style5' => __( 'Style 5', 'appnova' ),
-            ],
-         ]
-      );
-
-      $this->add_control(
-         'feature_icon', [
-            'label' => __( 'Feature Icon', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXT
-         ]
+        'feature_icon',
+        [
+          'label' => __( 'Feature Icon', 'appnova' ),
+          'type' => \Elementor\Controls_Manager::ICONS,
+          'default' => [
+            'value' => 'fas fa-star',
+            'library' => 'solid',
+          ],
+        ]
       );
       
       $this->add_control(
@@ -71,34 +61,6 @@ class appnova_Widget_Features extends Widget_Base {
          ]
       );
 
-      $this->add_control(
-         'feature_btn_text', [
-            'label' => __( 'Button Text', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => 'More About',
-         ]
-      );
-
-      $this->add_control(
-         'feature_btn_url', [
-            'label' => __( 'Button URL', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXT,
-            'default' => '#',
-         ]
-      );
-
-      $this->add_control(
-         'active',
-         [
-            'label' => __( 'Active', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::SWITCHER,
-            'label_on' => __( 'On', 'appnova' ),
-            'label_off' => __( 'Off', 'appnova' ),
-            'return_value' => 'active',
-            'default' => 'off',
-         ]
-      );
-      
       $this->end_controls_section();
 
    }
@@ -109,77 +71,17 @@ class appnova_Widget_Features extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-      <?php if ( $settings['style'] == 'style1' ){ ?>
-
-      <div class="single-features <?php echo esc_html($settings['active']) ?>">
-          <div class="features-icon mb-25">
-              <i class="<?php echo esc_attr($settings['feature_icon']) ?>"></i>
-          </div>
-          <div class="features-content">
-              <h3><?php echo esc_html( $settings['feature_title'] ) ?></h3>
-              <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
-              <a href="<?php echo esc_url( $settings['feature_btn_url'] ) ?>">
-                <?php echo esc_html( $settings['feature_btn_text'] ) ?>
-              </a>
-          </div>
-      </div>
-
-
-    <?php } elseif( $settings['style'] == 'style2' ){ ?>
-
-
-      <div class="single-services">
-          <div class="services-icon">
-              <i class="<?php echo esc_attr( $settings['feature_icon'] ) ?>"></i>
-          </div>
-          <div class="services-content">
-              <h4><?php echo esc_html( $settings['feature_title'] ) ?></h4>
-              <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
-          </div>
-      </div>
-
-    <?php } elseif( $settings['style'] == 'style3' ){ ?>
-
-      <div class="hr-single-services">
-          <div class="hr-services-icon mb-15">
-              <i class="<?php echo esc_attr( $settings['feature_icon'] ) ?>"></i>
-          </div>
-          <div class="hr-services-content">
-              <h4><?php echo esc_html( $settings['feature_title'] ) ?></h4>
-              <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
-              <a href="<?php echo esc_url( $settings['feature_btn_url'] ) ?>"><?php echo esc_html( $settings['feature_btn_text'] ) ?> <i class="fa fa-plus"></i></a>
-          </div>
-      </div>
-
-    <?php } elseif( $settings['style'] == 'style4' ){ ?>
-
-      <div class="single-features inner-single-features mb-30 text-center">
+      <div class="single-features text-center">
         <div class="features-icon mb-25">
-            <i class="<?php echo esc_attr( $settings['feature_icon'] ) ?>"></i>
+            <?php \Elementor\Icons_Manager::render_icon( $settings['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
         </div>
         <div class="features-content">
             <h4><?php echo esc_html( $settings['feature_title'] ) ?></h4>
             <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
-            <a href="<?php echo esc_url( $settings['feature_btn_url'] ) ?>"><?php echo esc_html( $settings['feature_btn_text'] ) ?></a>
-        </div>
-    </div>
-
-    <?php } elseif( $settings['style'] == 'style5' ){ ?>
-
-      <div class="digi-single-services">
-        <div class="digi-services-icon mb-25">
-            <i class="<?php echo esc_attr( $settings['feature_icon'] ) ?>"></i>
-        </div>
-        <div class="services-content">
-            <h4><?php echo esc_html( $settings['feature_title'] ) ?></h4>
-            <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
-            <a href="<?php echo esc_url( $settings['feature_btn_url'] ) ?>"><?php echo esc_html( $settings['feature_btn_text'] ) ?></a>
         </div>
     </div>
 
     <?php }
-    
-   }
  
 }
 

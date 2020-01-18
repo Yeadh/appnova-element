@@ -33,10 +33,8 @@ class appnova_Widget_Service extends Widget_Base {
          'icon',
          [
             'label' => __( 'Icon', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::MEDIA,
-            'default' => [
-               'url' => \Elementor\Utils::get_placeholder_image_src(),
-            ],
+            'type' => \Elementor\Controls_Manager::ICONS,
+            'default' => 'fa fa-facebook',
          ]     
       );
 
