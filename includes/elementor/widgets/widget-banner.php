@@ -57,7 +57,7 @@ class appnova_Widget_Banner extends Widget_Base {
          [
             'label' => __( 'Description', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
-            'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing seddo eiumod tempor incididunt labore dolore','appnova')
+            'default' => __('Lorem ipsum dolor sit amet consectetur adipiscing elit proin leo leo ornare nec vulputate tempus velit nam id purus tellus','appnova')
          ]
       );
 
@@ -94,7 +94,9 @@ class appnova_Widget_Banner extends Widget_Base {
                     <div class="col-xl-7 col-lg-6">
                         <div class="slider-content s-slider-content mt-60">
                             <h1 class="wow fadeInUp" data-wow-delay="0.2s"><?php echo $settings['title'] ?></h1>
-                            <p class="wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html( $settings['description'] ) ?></p>
+                            <div class="col-lg-10">
+                              <p class="wow fadeInUp" data-wow-delay="0.4s"><?php echo esc_html( $settings['description'] ) ?></p>
+                            </div>
                             <a href="<?php echo esc_url( $settings['btn_url'] ) ?>" class="btn wow fadeInLeft" data-wow-delay="0.6s"><?php echo esc_html( $settings['btn_text'] ) ?></a>
                         </div>
                     </div>
