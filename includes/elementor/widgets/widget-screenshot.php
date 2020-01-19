@@ -4,14 +4,14 @@ namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // Screenshot
-class appku_Widget_Screenshot extends Widget_Base {
+class appnova_Widget_Screenshot extends Widget_Base {
  
    public function get_name() {
       return 'screenshot';
    }
  
    public function get_title() {
-      return esc_html__( 'Screenshot', 'appku' );
+      return esc_html__( 'Screenshot', 'appnova' );
    }
  
    public function get_icon() { 
@@ -19,7 +19,7 @@ class appku_Widget_Screenshot extends Widget_Base {
    }
  
    public function get_categories() {
-      return [ 'appku-elements' ];
+      return [ 'appnova-elements' ];
    }
 
    protected function _register_controls() {
@@ -27,7 +27,7 @@ class appku_Widget_Screenshot extends Widget_Base {
       $this->start_controls_section(
          'screenshot_section',
          [
-            'label' => esc_html__( 'screenshot', 'appku' ),
+            'label' => esc_html__( 'screenshot', 'appnova' ),
             'type' => Controls_Manager::SECTION,
          ]
       );
@@ -37,7 +37,7 @@ class appku_Widget_Screenshot extends Widget_Base {
       $screenshot->add_control(
          'image',
          [
-            'label' => __( 'Upload an image', 'appku' ),
+            'label' => __( 'Upload an image', 'appnova' ),
             'type' => \Elementor\Controls_Manager::MEDIA,
             'default' => [
                'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -48,7 +48,7 @@ class appku_Widget_Screenshot extends Widget_Base {
       $this->add_control(
          'screenshot_list',
          [
-            'label' => __( 'Screenshot List', 'appku' ),
+            'label' => __( 'Screenshot List', 'appnova' ),
             'type' => \Elementor\Controls_Manager::REPEATER,
             'fields' => $screenshot->get_controls()
          ]
@@ -79,4 +79,4 @@ class appku_Widget_Screenshot extends Widget_Base {
  
 }
 
-Plugin::instance()->widgets_manager->register_widget_type( new appku_Widget_Screenshot );
+Plugin::instance()->widgets_manager->register_widget_type( new appnova_Widget_Screenshot );
