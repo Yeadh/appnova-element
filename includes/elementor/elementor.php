@@ -53,7 +53,6 @@ class appnova_ElementorCustomElement {
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-partner.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-portfolio.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-service.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-features.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-newsletter.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-testimonials.php');

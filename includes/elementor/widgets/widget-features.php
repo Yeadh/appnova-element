@@ -86,7 +86,7 @@ class appnova_Widget_Features extends Widget_Base {
 
       <?php 
       if ( $settings['style'] == 'center' ){ ?>
-        
+
       <div class="single-features text-center">
         <div class="features-icon mb-25">
             <?php \Elementor\Icons_Manager::render_icon( $settings['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -98,6 +98,16 @@ class appnova_Widget_Features extends Widget_Base {
       </div>
 
       <?php } elseif( $settings['style'] == 'left' ) { ?>
+
+      <div class="s-single-features">
+         <div class="s-features-icon">
+            <?php \Elementor\Icons_Manager::render_icon( $settings['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
+         </div>
+         <div class="features-content">
+             <h5><?php echo esc_html( $settings['feature_title'] ) ?></h5>
+            <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
+         </div>
+      </div>
 
       <?php } ?>
 
