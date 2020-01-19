@@ -31,6 +31,19 @@ class appnova_Widget_Features extends Widget_Base {
             'type' => Controls_Manager::SECTION,
          ]
       );
+
+      $this->add_control(
+         'style',
+         [
+            'label' => __( 'Service Style', 'appnova' ),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'center',
+            'options' => [
+               'center'  => __( 'Center Icon', 'appnova' ),
+               'left' => __( 'Left Icon', 'appnova' ),
+            ],
+         ]
+      );
       
 
       $this->add_control(
@@ -71,6 +84,9 @@ class appnova_Widget_Features extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
+      <?php 
+      if ( $settings['style'] == 'center' ){ ?>
+        
       <div class="single-features text-center">
         <div class="features-icon mb-25">
             <?php \Elementor\Icons_Manager::render_icon( $settings['feature_icon'], [ 'aria-hidden' => 'true' ] ); ?>
@@ -79,7 +95,12 @@ class appnova_Widget_Features extends Widget_Base {
             <h4><?php echo esc_html( $settings['feature_title'] ) ?></h4>
             <p><?php echo esc_html( $settings['feature_text'] ) ?></p>
         </div>
-    </div>
+      </div>
+
+      <?php } elseif( $settings['style'] == 'left' ) { ?>
+
+      <?php } ?>
+
 
     <?php }
  
