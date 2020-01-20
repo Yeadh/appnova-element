@@ -32,22 +32,6 @@ class appnova_Widget_Testimonials extends Widget_Base {
          ]
       );
 
-
-      $this->add_control(
-         'style',
-         [
-            'label' => __( 'Style', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'default' => 'style1',
-            'options' => [
-               'style1' => __( 'Style 1', 'appnova' ),
-               'style2' => __( 'Style 2', 'appnova' ),
-               'style3' => __( 'Style 3', 'appnova' ),
-            ],
-         ]
-      );
-
-
       $repeater = new \Elementor\Repeater();
 
       $repeater->add_control(
@@ -107,32 +91,7 @@ class appnova_Widget_Testimonials extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-      <?php if ( $settings['style'] == 'style1' ){ ?>
-
-      <div class="row justify-content-center">
-        <div class="col-xl-8 col-lg-10">
-          <div class="testimonial-active">
-            <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
-              <div class="single-testimonial text-center">
-                  <div class="testimonial-icon mb-25">
-                      <img src="<?php echo get_template_directory_uri() ?>/images/quote.png" alt="quote">
-                  </div>
-                  <div class="testimonial-content">
-                      <h5><?php echo esc_html($testimonial_single['testimonial']); ?></h5>
-                      <div class="testi-avatar">
-                          <h6><?php echo esc_html($testimonial_single['name']); ?></h6>
-                          <span><?php echo esc_html($testimonial_single['designation']); ?></span>
-                      </div>
-                  </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        </div>
-      </div>
-      
-      <?php } elseif( $settings['style'] == 'style2' ){ ?>
-        
-      <div class="row t-testimonial-active">
+      <div class="row testimonial-active">
         <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
           <div class="col-xl-4">
               <div class="t-single-testimonial text-center">
@@ -151,33 +110,7 @@ class appnova_Widget_Testimonials extends Widget_Base {
         <?php endforeach; ?>
       </div>
 
-      <?php } elseif( $settings['style'] == 'style3' ){ ?>
-
-      <div class="s-testimonial-active">
-          <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
-          <div class="single-testimonial s-single-testimonial text-center">
-              <div class="testimonial-icon mb-25">
-                  <img src="<?php echo get_template_directory_uri() ?>/images/quote02.png" alt="icon">
-              </div>
-              <div class="testimonial-content">
-                  <h5>“In promotion and of advertising, a testimonial or show consists person's written or spoken statement extoll product
-                  "testimonial "</h5>
-                  <div class="s-testi-avatar">
-                      <div class="testi-avatar-img">
-                          <img src="<?php echo esc_url( $testimonial_single['image']['url'] ); ?>" alt="img">
-                      </div>
-                      <div class="testi-avatar-info">
-                          <h6><?php echo esc_html($testimonial_single['name']); ?> _ <span><?php echo esc_html($testimonial_single['designation']); ?></span></h6>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <?php endforeach; ?>
-      </div>
-
-      <?php } ?>
-
-   <?php } 
+   <?php }
  
 }
 
