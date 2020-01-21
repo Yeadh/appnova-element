@@ -52,7 +52,6 @@ class appnova_ElementorCustomElement {
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-accordion.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-contact.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
-         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-partner.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-features.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-newsletter.php');
          include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-testimonials.php');

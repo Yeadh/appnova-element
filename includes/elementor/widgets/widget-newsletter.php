@@ -41,6 +41,14 @@ class appnova_Widget_newsletter extends Widget_Base {
       );
 
       $this->add_control(
+         'text', [
+            'label' => __( 'Text', 'appnova' ),
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'default' => __( 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over', 'appnova' ),
+         ]
+      );
+
+      $this->add_control(
          'shortcode', [
             'label' => __( 'Mailchimp Shortcode', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXTAREA,
@@ -63,9 +71,10 @@ class appnova_Widget_newsletter extends Widget_Base {
       <div class="newsletter-area">
         <div class="container">
           <div class="row justify-content-center">
-              <div class="col-xl-8 col-lg-10">
+              <div class="col-xl-7 col-lg-10">
                   <div class="section-title text-center border-none mb-50">
                       <h2><?php echo $settings['title']; ?></h2>
+                      <p><?php echo $settings['text']; ?></p>
                   </div>
               </div>
           </div>
