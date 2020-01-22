@@ -50,6 +50,7 @@ class appnova_Widget_Testimonials extends Widget_Base {
          [
             'label' => __( 'Name', 'appnova' ),
             'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => __('nancy pocker','appnova')
             
          ]
       );
@@ -58,7 +59,28 @@ class appnova_Widget_Testimonials extends Widget_Base {
          'designation',
          [
             'label' => __( 'Designation', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXT
+            'type' => \Elementor\Controls_Manager::TEXT,
+            'default' => __('Ui/Ux Designer & Product Designer','appnova')
+         ]
+      );
+
+      $repeater->add_control(
+         'rating',
+         [
+            'label' => __( 'Rating', 'appnova' ),
+            'type' => Controls_Manager::SLIDER,
+            'size_units' => [ 'px', '%' ],
+              'range' => [
+                '%' => [
+                  'min' => 1,
+                  'max' => 5,
+                  'step' => 1,
+                ]
+              ],
+              'default' => [
+                'unit' => '%',
+                'size' => 5,
+              ],
          ]
       );
 
@@ -66,7 +88,8 @@ class appnova_Widget_Testimonials extends Widget_Base {
          'testimonial',
          [
             'label' => __( 'Testimonial', 'appnova' ),
-            'type' => \Elementor\Controls_Manager::TEXTAREA
+            'type' => \Elementor\Controls_Manager::TEXTAREA,
+            'default' => __('Awesome Product highly recomended Lorem ipsum dolor alamet, nsectetur mayalipol tempor eiusmod tempor  recomended Lorem ipsum dolor alamet, nsec tetur mayalipol tempor eiusmod tempor incubto ectetur alasiqua enim ad nim veniam, quis nostrud ullam consectetur mayalipol','appnova')
          ]
       );
 
@@ -91,21 +114,39 @@ class appnova_Widget_Testimonials extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-      <div class="row testimonial-active">
-        <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
-              <div class="t-single-testimonial text-center">
-                <div class="t-testimonial-img mb-30">
+
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-4">
+            <div class="testimonial-active">
+              <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
+                <div class="testimonial-img">
                     <img src="<?php echo esc_url( $testimonial_single['image']['url'] ); ?>" alt="icon">
                 </div>
-                <div class="t-testimonial-content">
-                    <h5><?php echo esc_html($testimonial_single['testimonial']); ?></h5>
-                    <div class="testi-avatar">
-                        <h6><?php echo esc_html($testimonial_single['name']); ?></h6>
+              <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-8">
+            <div class="testimonial-nav">
+              <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
+                <div class="testimonial-content">
+                    <i class="fa fa-qoute"></i>
+                    <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
+                    <div class="testi-bottom">
+                    <div class="client-info">
+                        <h4><?php echo esc_html($testimonial_single['name']); ?></h4>
                         <span><?php echo esc_html($testimonial_single['designation']); ?></span>
                     </div>
+                  
+                    <ul class="list-inline">
+                     <?php for ($i=0; $i < $testimonial_single['rating']['size']; $i++) { ?>
+                       <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                     <?php } ?>
+                    </ul>
+                  </div>
                 </div>
-          </div>
-        <?php endforeach; ?>
+              <?php endforeach; ?>
+            </div>
+        </div>
       </div>
 
    <?php }

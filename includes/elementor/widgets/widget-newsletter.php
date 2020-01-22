@@ -66,8 +66,6 @@ class appnova_Widget_newsletter extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-
-      <!-- newsletter-area -->
       <div class="newsletter-area">
         <div class="container">
           <div class="row justify-content-center">
