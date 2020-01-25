@@ -13,7 +13,7 @@
  * @package           appnova_Element
  *
  * @wordpress-plugin
- * Plugin Name:       appnova Element
+ * Plugin Name:       Appnova Element
  * Plugin URI:        https://ThemeBeyond.com/mega-addons-for-elementor
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
