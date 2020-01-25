@@ -114,38 +114,39 @@ class appnova_Widget_Testimonials extends Widget_Base {
        
       $settings = $this->get_settings_for_display(); ?>
 
-
-      <div class="row align-items-center">
-        <div class="col-lg-4 col-md-4">
-            <div class="testimonial-active">
-              <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
-                <div class="testimonial-img">
-                    <img src="<?php echo esc_url( $testimonial_single['image']['url'] ); ?>" alt="icon">
-                </div>
-              <?php endforeach; ?>
-            </div>
-        </div>
-        <div class="col-lg-7 col-md-8">
-            <div class="testimonial-nav">
-              <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
-                <div class="testimonial-content">
-                    <i class="fa fa-qoute"></i>
-                    <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
-                    <div class="testi-bottom">
-                    <div class="client-info">
-                        <h4><?php echo esc_html($testimonial_single['name']); ?></h4>
-                        <span><?php echo esc_html($testimonial_single['designation']); ?></span>
-                    </div>
-                  
-                    <ul class="list-inline">
-                     <?php for ($i=0; $i < $testimonial_single['rating']['size']; $i++) { ?>
-                       <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                     <?php } ?>
-                    </ul>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-4">
+              <div class="testimonial-active">
+                <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
+                  <div class="testimonial-img">
+                      <img src="<?php echo esc_url( $testimonial_single['image']['url'] ); ?>" alt="icon">
                   </div>
-                </div>
-              <?php endforeach; ?>
-            </div>
+                <?php endforeach; ?>
+              </div>
+          </div>
+          <div class="col-lg-7 col-md-8">
+              <div class="testimonial-nav">
+                <?php foreach (  $settings['testimonial_list'] as $testimonial_single ): ?>
+                  <div class="testimonial-content">
+                      <i class="fa fa-qoute"></i>
+                      <p><?php echo esc_html($testimonial_single['testimonial']); ?></p>
+                      <div class="testi-bottom">
+                      <div class="client-info">
+                          <h4><?php echo esc_html($testimonial_single['name']); ?></h4>
+                          <span><?php echo esc_html($testimonial_single['designation']); ?></span>
+                      </div>
+                    
+                      <ul class="list-inline">
+                       <?php for ($i=0; $i < $testimonial_single['rating']['size']; $i++) { ?>
+                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                       <?php } ?>
+                      </ul>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+          </div>
         </div>
       </div>
 

@@ -49,6 +49,17 @@ class appnova_Widget_Button extends Widget_Base {
       );
       
       $this->add_control(
+         'button_border', [
+            'label' => __( 'Border', 'appnova' ),
+            'type' => \Elementor\Controls_Manager::SWITCHER,
+            'label_on' => __( 'On', 'appnova' ),
+            'label_off' => __( 'Off', 'appnova' ),
+            'return_value' => 'on',
+            'default' => 'off',
+         ]
+      );
+      
+      $this->add_control(
          'align',
          [
             'label' => __( 'Align', 'appnova' ),
@@ -80,8 +91,8 @@ class appnova_Widget_Button extends Widget_Base {
       $this->add_inline_editing_attributes( 'color', 'basic' );
       ?>
 
-      <div class="appnova-btn <?php if( $settings['color'] == 'yes' ){ echo 'alt-color';} ?>" style="text-align: <?php echo esc_attr($settings['align']) ?>">
-         <a class="btn" href="<?php echo esc_url( $settings['button_url'] ); ?>">
+      <div class="appnova-btn" style="text-align: <?php echo esc_attr($settings['align']) ?>">
+         <a class="btn <?php if( $settings['button_border'] == 'on' ){ echo 'border border-white';} ?>" href="<?php echo esc_url( $settings['button_url'] ); ?>">
             <?php echo esc_html( $settings['button_text'] ); ?></a>
       </div>
       <?php
